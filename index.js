@@ -1,4 +1,4 @@
-(function(scrollBottom,disconnect,target,options) {
+(function(scrollBottom,disconnect,target,options,threshold,x) {
 
     var height;
 
@@ -8,11 +8,9 @@
 
         console.log('callback that runs when observer is triggered');
 
-        window.scroll(0, height);
+        window.scroll(x, height);
 
     });
-
-    observer.observe(target,options);
 
     window.onscroll = function() {
 
@@ -22,7 +20,7 @@
 
         console.log('scrollataan, scrollBottom: ', scrollBottom, ', clientHeight: ', height);
 
-        if (scrollBottom >= (height - 100)) {
+        if (scrollBottom >= (height - threshold)) {
 
             console.log('scrollaa loppuun');
 
@@ -42,4 +40,4 @@
     }
 
 
-})(0,function(b){b();},document.getElementsByClassName('replies')[0],{subtree:false, childList: true});
+})(0,function(b){b();},document.getElementsByClassName('replies')[0],{subtree:false, childList: true},100);
