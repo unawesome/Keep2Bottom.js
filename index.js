@@ -40,4 +40,4 @@
     }
 
 
-})(0,function(b){b();},document.getElementsByClassName('replies')[0],{subtree:false, childList: true},100);
+})(0,function(b){b();},document.getElementsByClassName('replies')[0],{subtree:false, childList: true},100,0);
